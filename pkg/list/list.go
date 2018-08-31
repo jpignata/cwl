@@ -43,6 +43,8 @@ func (l List) listLogStreams() {
 	}
 
 	for _, stream := range streams {
-		fmt.Println(stream.Name + "\t" + stream.LastEvent.Format(time.UnixDate))
+		lastEvent := time.Now().Sub(stream.LastEvent).Truncate(time.Second)
+
+		fmt.Printf("%s (%s)\n", stream.Name, lastEvent)
 	}
 }
