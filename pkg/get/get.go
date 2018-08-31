@@ -34,19 +34,19 @@ type Get struct {
 	EventCache      *lru.Cache
 }
 
-func (g Get) AddStartTime(rawStartTime string) {
+func (g *Get) AddStartTime(rawStartTime string) {
 	if rawStartTime != "" {
 		g.StartTime = g.parseTime(rawStartTime)
 	}
 }
 
-func (g Get) AddEndTime(rawEndTime string) {
+func (g *Get) AddEndTime(rawEndTime string) {
 	if rawEndTime != "" {
 		g.EndTime = g.parseTime(rawEndTime)
 	}
 }
 
-func (g Get) AddStreams(streamNames []string) {
+func (g *Get) AddStreams(streamNames []string) {
 	for _, streamName := range streamNames {
 		g.LogStreamNames = append(g.LogStreamNames, streamName)
 	}
