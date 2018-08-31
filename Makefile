@@ -1,5 +1,5 @@
 cwl:
-	go build -o cwl main.go
+	go build -o bin/cwl main.go
 
 clean:
 	rm -f cwl
