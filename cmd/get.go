@@ -59,7 +59,7 @@ func init() {
 	getCmd.Flags().BoolVarP(&flagFollow, "follow", "f", false, "Poll logs and continuously print new events")
 	getCmd.Flags().StringVar(&flagFilter, "filter", "", "Filter pattern to apply")
 	getCmd.Flags().StringVar(&flagStartTime, "start", "", "Earliest time to return logs (e.g. -1h, 2018-01-01 09:36:00 EST")
-	getCmd.Flags().StringVar(&flagEndTime, "end", "", "Latest time to return logs (e.g. 3y, 2021-01-20 12:00:00 EST")
+	getCmd.Flags().StringVar(&flagEndTime, "end", "", "Latest time to return logs (e.g. 2021-01-20 12:00:00 EST")
 	getCmd.Flags().StringSliceVarP(&flagStreams, "streams", "s", []string{}, "Show logs from specific stream (can be specified multiple times)")
 
 	rootCmd.AddCommand(getCmd)
